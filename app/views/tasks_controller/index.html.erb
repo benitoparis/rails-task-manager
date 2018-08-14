@@ -1,0 +1,19 @@
+
+<h1>Listes des taches</h1>
+
+
+<% @tasks.each do |item| %>
+<div class="form-inline">
+<span><label><%= item.title %>  <input type="checkbox" name="checktask" value="<%= item.id %>" class="form-control"/></label><%= link_to "Delete", delete_path(item.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></span>
+<br>
+</div>
+<% end %>
+
+
+
+
+<br>
+<%= link_to "Add a new task", newtask_path %>
+

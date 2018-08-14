@@ -1,0 +1,24 @@
+<h2> show details of task</h2>
+
+
+<div class="container">
+  <%= link_to "Edit task", edittask_path , { :class=>"btn btn-success" } %>
+  <br>
+  <br>
+  <%= @task.title %>
+  <%= @task.details %>
+  <%= @task.completed %>
+
+  <% if @task.completed == 1 %>
+  <br>
+  <br>
+  <label for name=" taskcheck">This task is not completed </label><input type="checkbox" name="taskcheck" value="false" class="form-control"/>
+  <% else %>
+  <br>
+  <br>
+  <label for name=" taskcheck">This task is completed </label><input type="checkbox" name="taskcheck" value="true" class="form-control"/>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to "Back to the list", tasks_path %>
+</div>
